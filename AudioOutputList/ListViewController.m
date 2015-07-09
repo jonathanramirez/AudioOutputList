@@ -157,7 +157,7 @@
         error = AudioObjectGetPropertyData(kAudioObjectSystemObject, &aopa, 0, NULL, &propSize, audioDevices);
         if (error == noErr) {
             UInt32 propSize = sizeof(CFStringRef);
-            for(int i = 1; i <= deviceCount; i++) {
+            for(int i = 0; i < deviceCount; i++) {
                 NSString *result;
                 aopa.mSelector = kAudioDevicePropertyDeviceManufacturerCFString;
                 error = AudioObjectGetPropertyData(audioDevices[i], &aopa, 0, NULL, &propSize, &result);
